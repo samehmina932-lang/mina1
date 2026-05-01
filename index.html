@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ALPHA WEAR</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:#0b0b0f;color:#fff}
+
+.top{
+background:#00ff88;color:#000;text-align:center;padding:10px;font-weight:bold
+}
+
+nav{
+display:flex;justify-content:space-between;align-items:center;
+padding:18px 40px;background:#111;position:sticky;top:0;z-index:1000
+}
+
+nav h1{
+color:#00ff88;cursor:pointer;display:flex;align-items:center;gap:10px
+}
+
+nav h1 img{width:28px;height:28px;border-radius:6px}
+
+nav ul{display:flex;list-style:none;gap:20px}
+
+nav ul li{
+cursor:pointer;transition:.3s;padding:6px 10px;border-radius:6px
+}
+
+nav ul li:hover{
+background:#00ff88;color:#000;transform:translateY(-2px)
+}
+
+.hero{
+height:85vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center
+}
+.hero h2{font-size:48px}
+.hero p{color:#aaa;margin:10px 0}
+
+.btn{
+background:#00ff88;color:#000;padding:12px 22px;border:none;border-radius:8px;font-weight:bold;cursor:pointer;transition:.3s
+}
+.btn:hover{transform:scale(1.07)}
+
+section{padding:40px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.card{background:#111;padding:15px;border-radius:12px}
+.card img{width:100%;border-radius:10px}
+
+input,select,textarea{
+width:100%;margin-top:8px;padding:10px;border-radius:8px;border:none;background:#1a1a1a;color:#fff
+}
+textarea{height:70px;resize:none}
+
+.free{color:#00ff88;font-weight:bold;margin-top:10px}
+
+.gallery img{width:100%;border-radius:10px;margin-top:10px}
+
+#adminPanel{display:none;background:#0f0f0f;padding:20px}
+.table{width:100%;border-collapse:collapse;margin-top:20px}
+.table th,.table td{border:1px solid #333;padding:10px}
+.table th{background:#00ff88;color:#000}
+
+.loginBox{
+background:#111;padding:20px;border-radius:12px;max-width:320px;margin:auto;text-align:center
+}
+
+.hidden{display:none}
+
+.social-boxes{
+display:flex;justify-content:center;gap:20px;margin-top:40px;flex-wrap:wrap
+}
+
+.social{
+background:#111;padding:20px;border-radius:12px;cursor:pointer;transition:.3s;text-align:center;width:140px
+}
+
+.social:hover{
+background:#00ff88;color:#000;transform:scale(1.1)
+}
+nav h1 img{
+width:32px;
+height:32px;
+border-radius:8px;
+object-fit:cover;
+}
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+gap:10px;
+}
+
+.gallery img{
+width:100%;
+height:160px;
+object-fit:cover;
+border-radius:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="top">🔥 Alpha Wear - Be Strong. Be Alpha 💪</div>
+
+<nav>
+<h1 onclick="scrollToSection('home')">
+<img src="New folder/download (18).jpeg"> ALPHA WEAR
+</h1>
+<ul>
+<li onclick="scrollToSection('home')">Home</li>
+<li onclick="scrollToSection('shop')">Shop</li>
+<li onclick="scrollToSection('gallery')">Gallery</li>
+</ul>
+</nav>
+
+<section class="hero" id="home">
+<h2>Be The Alpha 💪</h2>
+<p>Gym wear that builds real confidence 🔥</p>
+<button class="btn" onclick="scrollToSection('shop')">Shop Now</button>
+</section>
+
+<section id="shop">
+<h2>T-Shirts Collection</h2>
+
+<div class="grid">
+<div class="card">
+<img id="previewImg" src="https://via.placeholder.com/300">
+
+
+<input id="name" placeholder="Full Name">
+<input id="phone" placeholder="Phone">
+<input id="address" placeholder="Address">
+
+<select id="size">
+<option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
+</select>
+
+<select id="payment">
+<option>Select Payment</option><option>Cash</option><option>Vodafone Cash</option>
+</select>
+
+<textarea id="notes" placeholder="Notes"></textarea>
+
+<button class="btn" onclick="order()">Place Order</button>
+<p class="free">🚚 Free Delivery Included</p>
+</div>
+</div>
+</section>
+
+<section id="gallery">
+<h2>Our Work</h2>
+<div class="gallery">
+<img src="New folder/WhatsApp Image 2026-05-01 at 10.25.38 PM (1).jpeg">
+<img src="New folder/WhatsApp Image 2026-05-01 at 10.25.38 PM.jpeg">
+<img src="New folder/WhatsApp Image 2026-05-01 at 10.25.39 PM (1).jpeg">
+</div>
+</section>
+
+<section id="contact">
+<h2>Contact Us</h2>
+
+<div class="social-boxes">
+
+<div class="social" onclick="window.open('https://wa.me/201XXXXXXXXX','_blank')">
+📱 WhatsApp
+</div>
+
+<div class="social" onclick="window.open('https://facebook.com/yourpage','_blank')">
+📘 Facebook
+</div>
+
+<div class="social" onclick="window.open('https://instagram.com/yourpage','_blank')">
+📸 Instagram
+</div>
+
+</div>
+
+</section>
+
+<section id="adminPanel" class="hidden">
+
+<div id="loginBox" class="loginBox">
+<h3>Admin Login</h3>
+<input type="password" id="pass" placeholder="Enter Password">
+<button class="btn" onclick="login()">Login</button>
+</div>
+
+<div id="dashboard" class="hidden">
+<h2>📦 Orders</h2>
+<table class="table">
+<thead>
+<tr>
+<th>Name</th><th>Phone</th><th>Address</th><th>Size</th><th>Payment</th><th>Notes</th>
+</tr>
+</thead>
+<tbody id="ordersTable"></tbody>
+</table>
+</div>
+
+</section>
+
+<script>
+let orders = JSON.parse(localStorage.getItem("orders")) || [];
+let productImg = "https://via.placeholder.com/300";
+
+function scrollToSection(id){
+  document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+
+function loadImage(e){
+let r=new FileReader();
+r.onload=()=>{
+productImg=r.result;
+document.getElementById('previewImg').src=productImg;
+};
+r.readAsDataURL(e.target.files[0]);
+}
+
+function order(){
+let o={
+name:name.value,
+phone:phone.value,
+address:address.value,
+size:size.value,
+payment:payment.value,
+notes:notes.value,
+img:productImg
+};
+
+if(!o.name||!o.phone||!o.address||o.size=="Select Size"){
+alert("Fill all fields");return;
+}
+
+orders.push(o);
+localStorage.setItem("orders",JSON.stringify(orders));
+
+let msg=`🔥 NEW ORDER%0AName:${o.name}%0APhone:${o.phone}%0AAddress:${o.address}%0ASize:${o.size}%0APayment:${o.payment}%0ANotes:${o.notes}%0A%0A🚚 FREE DELIVERY INCLUDED`;
+window.open("https://wa.me/201097220043?text="+msg,"_blank");}
+
+function openAdmin(){
+document.getElementById('adminPanel').style.display='block';
+}
+
+function login(){
+if(pass.value=="1234"){
+document.getElementById('loginBox').classList.add('hidden');
+document.getElementById('dashboard').classList.remove('hidden');
+}else{alert("Wrong password")}
+}
+
+function loadOrders(){
+let t=document.getElementById('ordersTable');
+t.innerHTML="";
+orders.forEach(o=>{
+t.innerHTML+=`<tr>
+<td>${o.name}</td><td>${o.phone}</td><td>${o.address}</td><td>${o.size}</td><td>${o.payment}</td><td>${o.notes}</td>
+</tr>`;
+});
+}
+</script>
+
+</body>
+</html>
